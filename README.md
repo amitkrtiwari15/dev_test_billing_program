@@ -30,14 +30,14 @@
 - Cannot be less than 0 (zero)
 ### Submit Button
 - On Submit, all the data will be saved in the database
-- A unique order ID will be generated and displayed with appropriate message
+- A unique order ID will be generated and displayed with an appropriate message
 - Note: All input fields are required. Input data should not contain any leading or trailing white 
 spaces.
-### Please refer to the Doc
+### Please refer to the Doc: [Documentation](https://github.com/amitkrtiwari15/dev_test_billing_program/blob/staging/Developer%20Test%20Billing%20Program.pdf)
 
 ---------------------------------------------------------------------------
 
 ### Installation :
 - Create Database `billing`
-- Create table using `config/db.sql` script
+- Create a table using the `config/db.sql` script
 - Do server and Db configuration in `config/DbConnection.php`
