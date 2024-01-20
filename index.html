@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/billing.css">
+    <title>Billing Program</title>
+</head>
+<body>
+<img src="img/header_img.png" alt="Header Image" class="header-image">
+<div class="container">
+    <h3 class="text-center mt-2 main-heading">Billing System</h3>
+    <div class="row justify-content-center">
+        <div class="billing_results" style="display: none;">
+        </div>
+        <div class="col-md-12">
+            <form id="billingForm">
+                <div class="form-container">
+                    <h4 class="form-heading-top text-center">Customer Information</h4>
+                    <!-- Customer Information -->
+                    <div class="form-group">    
+                        <div class="row">
+                            <label class="col-md-3" for="customerName">Customer Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="customerName" name="customerName" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">        
+                        <div class="row">
+                            <label class="col-md-3" for="contactNumber">Contact No.</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" maxlength="10" id="contactNumber" name="contactNumber" placeholder="10 digits contact number" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">       
+                        <div class="row">
+                            <label class="col-md-3" for="email">Email Address</label>
+                            <div class="col-md-9">
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <span class="text-danger email-msg" style="display: none;">Email address already exists in records.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-md-3 control-label" for="city">City</label>
+                            <div class="col-md-9">
+                                <select class="form-control" id="city" name="city" required>
+                                    <!-- City options will be dynamically -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <!-- Billing Summary -->
+                    <div class="form-group">
+                        <h4 class="form-subheading">Billing Summary</h4>
+                        <div class="form-group">
+                            <table class="table" id="productTable">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Product Description</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="product-body">
+                                        <td>#</td>
+                                        <td style="width: 35%;"><input type="text" class="form-control" name="productDescription" id="productDescription"></td>
+                                        <td style="width: 15%;"><input type="number" class="form-control" name="quantity" id="quantity" min="1" ></td>
+                                        <td style="width: 15%;"><input type="number" class="form-control" name="price" id="price" min="0"></td>
+                                        <td class="text-right"><button type="button" class="btn btn-primary" id="addRow">Add</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <!-- Show Sub Total, Total GST, and Grand Total -->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-6 control-label text-right" for="subTotal">Sub Total:</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="subTotal" value="0" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-6 control-label text-right" for="discount">discount</label>
+                                        <div class="col-md-6">
+                                            <input type="number" name="discount" class="form-control" id="discount" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-6 control-label text-right" for="gstAmount">Total GST (18%):</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="gstAmount" value="0" readonly>
+                                            <span class="text-muted" style="font-size: 10px;">GST calculated on discounted amount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-6 control-label text-right" for="grandTotal">Grand Total:</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="grandTotal" value="0" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Submit -->
+                <div class="form-group text-right mt-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js/billing.js"></script>
+</body>
+</html>
